@@ -1,0 +1,8 @@
+GET /games?date=2022-02-12 HTTP/1.1
+X-Rapidapi-Host: api-nba-v1.p.rapidapi.com
+X-Rapidapi-Key: 8878829cabmshdd811a9dd7f80bcp151623jsn031673c60a5e
+Host: api-nba-v1.p.rapidapi.com
+
+###
+
+
