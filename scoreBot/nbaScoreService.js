@@ -2,10 +2,15 @@ async function getScores() {
     var today = new Date();
     let month = today.getMonth() + 1;
     let monthString;
+    let thisDay = today.getDay() + 1;
+    let thisDayString;
     if (month < 10) {
         monthString = `0${month.toString()}`;
     }
-    var date = today.getFullYear() + '-' + (monthString) + '-' + today.getDate();
+    if (thisDay < 10) {
+        thisDayString = `0${thisDay.toString()}`;
+    }
+    var date = today.getFullYear() + '-' + (monthString) + '-' + (thisDayString);
     console.log(date);
     const options = {
         method: 'GET',
