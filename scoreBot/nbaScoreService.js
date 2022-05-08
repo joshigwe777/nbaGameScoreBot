@@ -27,10 +27,9 @@ async function getScores() {
 }
 // data.response[0].scores.home.points
 
-// console.log(getScores());
-
 function getScoreData() {
     let arr = [];
+    let finalString = `Scores: \n`;
 
     let games = getScores()
         .then((data) => {
@@ -43,21 +42,28 @@ function getScoreData() {
                 })
             }
         });
-    return arr;
+
+    console.log(arr);
+    return finalString;
 }
-
-
 console.log(getScoreData());
-/*
-The response comes in the form of an array of objects that must be traversed so that the necessary data can be retrieved.
 
-Home Team name
-Home Team score
+// function getScoresFormatted(arr) {
+//     let finalString = "";
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i].homeScore > 0) {
+//             console.log("hello");
+//             finalString += `${arr[i].homeTeam}: ${arr[i].homeScore} ${arr[i].visitorsTeam}: ${arr[i].visitingScore} \n`;
+//         }
 
-Away Team name
-Away Team score
+//     }
+//     console.log(finalString);
+//     // return finalString;
+//     return "hello";
+// }
 
-*/
+
+
 
 
 
