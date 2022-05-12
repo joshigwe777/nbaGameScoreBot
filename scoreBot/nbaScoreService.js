@@ -1,17 +1,28 @@
-async function getScores() {
-    var today = new Date();
-    let month = today.getMonth() + 1;
+let today = new Date();
+async function getScores(useThis) {
+    let month = useThis.getMonth() + 1;
     let monthString;
-    let thisDay = today.getDay() + 1;
+    let thisDay = useThis.getDay() + 1;
     let thisDayString;
+
+
     if (month < 10) {
         monthString = `0${month.toString()}`;
+    } else if (month >= 10) {
+        monthString = monthString;
     }
+
     if (thisDay < 10) {
         thisDayString = `0${thisDay.toString()}`;
+
+    } else if (thisDay >= 10) {
+        thisDayString = thisDay.toString;
     }
-    var date = today.getFullYear() + '-' + (monthString) + '-' + (thisDayString);
-    console.log(date);
+
+    var date = useThis.getFullYear() + '-' + (monthString) + '-' + (thisDayString);
+    console.log(thisDayString);
+    console.log(useThis);
+    console.log()
     const options = {
         method: 'GET',
         headers: {
@@ -31,7 +42,7 @@ function getScoreData() {
     let arr = [];
     let finalString = `Scores: \n`;
 
-    let games = getScores()
+    let games = getScores(today)
         .then((data) => {
             for (let i of data.response) {
                 arr.push({
